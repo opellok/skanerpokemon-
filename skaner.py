@@ -11,7 +11,7 @@ from curl_cffi.requests import AsyncSession
 
 MAX_BUDGET_PLN = 600.0
 MIN_DISCOUNT_PLN = 15.0
-MIN_PRICE_RATIO = 0.40
+MIN_PRICE_RATIO = 0.45
 SEEN_FILE = "seen_offers_v2.json"
 
 TARGET_SETS = {
@@ -26,7 +26,7 @@ TARGET_SETS = {
     "mega_evolution_base": {"name": "Mega Evolution (Base Set)", "keywords": ["mega evolution", "mega evolutions"]},
     "black_bolt": {"name": "Black Bolt", "keywords": ["black bolt", "blackbolt"]},
     "white_flare": {"name": "White Flare", "keywords": ["white flare", "whiteflare"]},
-    "sv_151": {"name": "Scarlet & Violet — 151", "keywords": ["pokemon 151", "scarlet & violet 151", "scarlet violet 151", "sv 151", "sv151", "mew 151", " 151 ", "set 151", "edycja 151"]},
+    "sv_151": {"name": "Scarlet & Violet — 151", "keywords": ["pokemon 151", "scarlet & violet 151", "scarlet violet 151", "sv 151", "sv151", "mew 151", " 151 ", "151"]},
     "crown_zenith": {"name": "Crown Zenith", "keywords": ["crown zenith", "zenith"]},
     "evolving_skies": {"name": "Evolving Skies", "keywords": ["evolving skies", "evolving"]},
     "chilling_reign": {"name": "Chilling Reign", "keywords": ["chilling reign", "chilling"]},
@@ -86,40 +86,40 @@ SEALED_PRODUCT_TYPES = [
     ("etb", ["elite trainer box", "elite trainer", "etb", "zestaw trenera", "pudełko trenera", "pudelko trenera"]),
     ("booster_bundle", ["booster bundle", "boosterbundle", "bundle", "6 boosterów", "6 boosterow", "6 paczek", "6 saszetek"]),
     ("upc", ["ultra premium collection", "upc", "super premium collection", "spc", "premium collection"]),
-    ("poster_collection", ["poster collection", "poster box", "zestaw z plakatem", "pudełko z plakatem", "z plakatem"]),
-    ("binder_collection", ["binder collection", "binder box", "zestaw z albumem", "z albumem"]),
+    ("poster_collection", ["poster collection", "poster box", "zestaw z plakatem", "pudełko z plakatem"]),
+    ("binder_collection", ["binder collection", "binder box", "zestaw z albumem"]),
     ("3pack_blister", ["3-pack blister", "3 pack blister", "3pack blister", "triple blister", "3 boostery", "3 paczki", "trójpak"]),
     ("checklane_blister", ["checklane blister", "1-pack blister", "1 pack blister", "blister"]),
     ("sleeved_booster", ["sleeved booster", "sleeved pack", "booster w kartoniku", "w kartoniku"]),
     ("mini_tin", ["mini tin", "minitin", "mała puszka", "mala puszka"]),
     ("tin", ["tin", "puszka", "metalowe pudełko", "metalowe pudelko"]),
-    ("collection_box", ["collection box", "ex box", "v box", "vmax box", "vstar box", "tech sticker", "zestaw kolekcjonerski", "box"]),
-    ("booster_pack", ["booster pack", "booster", "saszetka", "saszetki", "paczka", "paczki", "paczuszka", "10 kart", "sealed"]),
+    ("collection_box", ["collection box", "ex box", "v box", "vmax box", "vstar box", "tech sticker", "zestaw kolekcjonerski"]),
+    ("booster_pack", ["booster pack", "booster", "saszetka", "saszetki", "paczka", "paczki", "paczuszka", "10 kart"]),
 ]
 
 MARKET_PRICES_PLN = {
-    "ascended_heroes__booster_pack": 35.0, "ascended_heroes__booster_bundle": 195.0, "ascended_heroes__etb": 340.0,
-    "30th_celebration_classic__booster_pack": 65.0,
-    "prismatic_evolutions__booster_pack": 48.0, "prismatic_evolutions__booster_bundle": 265.0, "prismatic_evolutions__etb": 440.0,
-    "prismatic_evolutions__poster_collection": 175.0, "prismatic_evolutions__binder_collection": 250.0, "prismatic_evolutions__mini_tin": 90.0,
-    "mega_evolution_base__booster_pack": 30.0, "mega_evolution_base__booster_bundle": 175.0, "mega_evolution_base__etb": 300.0,
-    "black_bolt__booster_pack": 32.0, "black_bolt__booster_bundle": 180.0, "black_bolt__etb": 310.0,
-    "white_flare__booster_pack": 32.0, "white_flare__booster_bundle": 180.0, "white_flare__etb": 310.0,
-    "sv_151__booster_pack": 58.0, "sv_151__booster_bundle": 320.0, "sv_151__etb": 560.0,
-    "sv_151__poster_collection": 195.0, "sv_151__binder_collection": 290.0, "sv_151__mini_tin": 105.0,
-    "crown_zenith__booster_pack": 40.0, "crown_zenith__booster_bundle": 230.0, "crown_zenith__etb": 390.0, "crown_zenith__mini_tin": 85.0,
-    "evolving_skies__booster_pack": 95.0, "evolving_skies__sleeved_booster": 105.0, "evolving_skies__3pack_blister": 270.0,
-    "chilling_reign__booster_pack": 38.0, "chilling_reign__etb": 360.0,
-    "fusion_strike__booster_pack": 42.0, "fusion_strike__etb": 380.0,
-    "cosmic_eclipse__booster_pack": 115.0, "hidden_fates__booster_pack": 130.0, "hidden_fates__tin": 420.0,
-    "unified_minds__booster_pack": 100.0, "unbroken_bonds__booster_pack": 115.0, "team_up__booster_pack": 280.0,
-    "lost_thunder__booster_pack": 90.0, "ultra_prism__booster_pack": 100.0, "celestial_storm__booster_pack": 95.0,
-    "ancient_origins__booster_pack": 150.0, "primal_clash__booster_pack": 110.0, "roaring_skies__booster_pack": 140.0,
-    "breakthrough__booster_pack": 95.0, "phantom_forces__booster_pack": 220.0, "flashfire__booster_pack": 290.0,
-    "legendary_treasures__booster_pack": 310.0, "plasma_blast__booster_pack": 270.0, "plasma_freeze__booster_pack": 350.0,
-    "plasma_storm__booster_pack": 380.0, "dragons_exalted__booster_pack": 300.0, "dark_explorers__booster_pack": 340.0,
-    "boundaries_crossed__booster_pack": 270.0, "call_of_legends__booster_pack": 520.0,
-    "undaunted__booster_pack": 390.0, "triumphant__booster_pack": 450.0, "rising_rivals__booster_pack": 410.0, "supreme_victors__booster_pack": 480.0,
+    "ascended_heroes__booster_pack": 35.0, "ascended_heroes__booster_bundle": 210.0, "ascended_heroes__etb": 360.0,
+    "30th_celebration_classic__booster_pack": 70.0,
+    "prismatic_evolutions__booster_pack": 48.0, "prismatic_evolutions__booster_bundle": 270.0, "prismatic_evolutions__etb": 460.0,
+    "prismatic_evolutions__poster_collection": 180.0, "prismatic_evolutions__binder_collection": 260.0, "prismatic_evolutions__mini_tin": 95.0,
+    "mega_evolution_base__booster_pack": 30.0, "mega_evolution_base__booster_bundle": 180.0, "mega_evolution_base__etb": 310.0,
+    "black_bolt__booster_pack": 32.0, "black_bolt__booster_bundle": 185.0, "black_bolt__etb": 320.0,
+    "white_flare__booster_pack": 32.0, "white_flare__booster_bundle": 185.0, "white_flare__etb": 320.0,
+    "sv_151__booster_pack": 58.0, "sv_151__booster_bundle": 330.0, "sv_151__etb": 580.0,
+    "sv_151__poster_collection": 210.0, "sv_151__binder_collection": 290.0, "sv_151__mini_tin": 105.0,
+    "crown_zenith__booster_pack": 40.0, "crown_zenith__booster_bundle": 240.0, "crown_zenith__etb": 420.0, "crown_zenith__mini_tin": 85.0,
+    "evolving_skies__booster_pack": 95.0, "evolving_skies__sleeved_booster": 110.0, "evolving_skies__3pack_blister": 290.0,
+    "chilling_reign__booster_pack": 38.0, "chilling_reign__etb": 370.0,
+    "fusion_strike__booster_pack": 42.0, "fusion_strike__etb": 390.0,
+    "cosmic_eclipse__booster_pack": 115.0, "hidden_fates__booster_pack": 135.0, "hidden_fates__tin": 430.0,
+    "unified_minds__booster_pack": 105.0, "unbroken_bonds__booster_pack": 115.0, "team_up__booster_pack": 290.0,
+    "lost_thunder__booster_pack": 90.0, "ultra_prism__booster_pack": 105.0, "celestial_storm__booster_pack": 95.0,
+    "ancient_origins__booster_pack": 155.0, "primal_clash__booster_pack": 115.0, "roaring_skies__booster_pack": 145.0,
+    "breakthrough__booster_pack": 95.0, "phantom_forces__booster_pack": 230.0, "flashfire__booster_pack": 310.0,
+    "legendary_treasures__booster_pack": 330.0, "plasma_blast__booster_pack": 290.0, "plasma_freeze__booster_pack": 380.0,
+    "plasma_storm__booster_pack": 420.0, "dragons_exalted__booster_pack": 320.0, "dark_explorers__booster_pack": 370.0,
+    "boundaries_crossed__booster_pack": 290.0, "call_of_legends__booster_pack": 550.0,
+    "undaunted__booster_pack": 430.0, "triumphant__booster_pack": 490.0, "rising_rivals__booster_pack": 450.0, "supreme_victors__booster_pack": 520.0,
 }
 
 POLISH_STORES = [
@@ -151,23 +151,23 @@ POLISH_STORES = [
 ]
 
 SEARCH_QUERIES = [
-    "pokemon booster", "pokemon etb", "pokemon bundle", "pokemon box",
-    "paczki pokemon", "saszetki pokemon", "karty pokemon nowe", "zestaw pokemon",
-    "puszka pokemon", "pokemon 151", "prismatic", "evolving skies",
-    "crown zenith", "team up", "hidden fates", "cosmic eclipse", "fusion strike",
-    "chilling reign", "ascended heroes", "30th celebration", "mega evolution",
-    "black bolt", "white flare", "flashfire", "phantom forces", "plasma"
+    "pokemon", "karty pokemon", "pokemon booster", "pokemon etb", "pokemon bundle", "pokemon box",
+    "paczki pokemon", "saszetki pokemon", "zestaw pokemon", "puszka pokemon",
+    "pokemon 151", "prismatic", "evolving skies", "crown zenith", "team up",
+    "hidden fates", "cosmic eclipse", "fusion strike", "chilling reign",
+    "ascended heroes", "30th celebration", "mega evolution", "black bolt", "white flare"
 ]
 
 
 def norm(text: str) -> str:
-    return f" {re.sub(r'\s+', ' ', (text or '').lower()).strip()} "
+    cleaned = re.sub(r"\s+", " ", (text or "").lower()).strip()
+    return " " + cleaned + " "
 
 
 def evaluate_offer(title: str, desc: str, price: float):
     if price <= 0 or price > MAX_BUDGET_PLN:
         return None
-    full_norm = norm(f"{title} {desc}")
+    full_norm = norm(title + " " + desc)
 
     if any(b in full_norm for b in NON_ENGLISH_BLACKLIST):
         return None
@@ -195,7 +195,7 @@ def evaluate_offer(title: str, desc: str, price: float):
     if "allowed_types" in matched_set and prod_type not in matched_set["allowed_types"]:
         return None
 
-    sku = f"{matched_set_id}__{prod_type}"
+    sku = matched_set_id + "__" + prod_type
     market_price = MARKET_PRICES_PLN.get(sku)
     if not market_price:
         return None
@@ -235,10 +235,10 @@ async def scrape_olx(pages: int = 1):
                     for item in r.json().get("data", []):
                         price = next((float(pr["value"]["value"]) for pr in item.get("params", []) if pr.get("key") == "price"), 0.0)
                         photos = item.get("photos", [])
-                        img = photos.get("link", "").replace("{width}", "600").replace("{height}", "600") if photos else ""
+                        img = photos[0].get("link", "").replace("{width}", "600").replace("{height}", "600") if photos else ""
                         if price > 0:
-                            out.append({"id": f"olx_{item['id']}", "source": "OLX", "title": item.get("title", ""), "desc": item.get("description", ""), "price": price, "url": item.get("url", ""), "image": img})
-                    await asyncio.sleep(random.uniform(0.7, 1.4))
+                            out.append({"id": "olx_" + str(item["id"]), "source": "OLX", "title": item.get("title", ""), "desc": item.get("description", ""), "price": price, "url": item.get("url", ""), "image": img})
+                    await asyncio.sleep(random.uniform(0.7, 1.3))
                 except Exception:
                     pass
     return out
@@ -255,7 +255,7 @@ async def scrape_vinted(pages: int = 1):
         headers = {
             "Accept": "application/json, text/plain, */*",
             "Accept-Language": "pl-PL,pl;q=0.9",
-            "Referer": "https://www.vinted.pl/catalog?search_text=pokemon",
+            "Referer": "https://www.vinted.pl/catalog",
             "Sec-Fetch-Dest": "empty",
             "Sec-Fetch-Mode": "cors",
             "Sec-Fetch-Site": "same-origin",
@@ -273,12 +273,12 @@ async def scrape_vinted(pages: int = 1):
                         price = float(p_obj.get("amount", 0)) if isinstance(p_obj, dict) else float(item.get("price_numeric", 0) or 0)
                         url = item.get("url", "")
                         if url and not url.startswith("http"):
-                            url = f"https://www.vinted.pl{url}"
+                            url = "https://www.vinted.pl" + url
                         photo = item.get("photo", {})
                         img = photo.get("url", "") if isinstance(photo, dict) else ""
                         if price > 0:
-                            out.append({"id": f"vinted_{item['id']}", "source": "Vinted", "title": item.get("title", ""), "desc": "", "price": price, "url": url, "image": img})
-                    await asyncio.sleep(random.uniform(0.9, 1.8))
+                            out.append({"id": "vinted_" + str(item["id"]), "source": "Vinted", "title": item.get("title", ""), "desc": "", "price": price, "url": url, "image": img})
+                    await asyncio.sleep(random.uniform(1.0, 1.8))
                 except Exception:
                     pass
     return out
@@ -287,7 +287,7 @@ async def scrape_vinted(pages: int = 1):
 async def scrape_stores():
     out = []
     store_qs = ["pokemon 151", "prismatic", "crown zenith", "evolving skies", "chilling reign", "fusion strike", "ascended heroes", "30th celebration", "mega evolution", "black bolt", "white flare", "team up", "hidden fates", "cosmic eclipse", "booster pokemon"]
-    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/131.0.0.0"}
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"}
     async with httpx.AsyncClient(headers=headers, timeout=12.0, follow_redirects=True) as client:
         for sname, surl in POLISH_STORES:
             for q in store_qs:
@@ -305,30 +305,30 @@ async def scrape_stores():
                         ptag = card.select_one("ins .woocommerce-Price-amount, .woocommerce-Price-amount, .price em, .price, .product-price")
                         if not a or not ptag:
                             continue
-                        cleaned = re.sub(r"[^\d,\.]", "", ptag.get_text()).replace(",", ".")
+                        cleaned = re.sub(r"[^0-9,.]", "", ptag.get_text()).replace(",", ".")
                         if cleaned.count(".") > 1:
                             parts = cleaned.split(".")
                             cleaned = "".join(parts[:-1]) + "." + parts[-1]
                         price = float(cleaned) if cleaned else 0.0
                         href = a.get("href", "")
                         if href and not href.startswith("http"):
-                            href = f"{'/'.join(url.split('/')[:3])}/{href.lstrip('/')}"
+                            href = "/".join(url.split("/")[:3]) + "/" + href.lstrip("/")
                         img_tag = card.select_one("img")
                         img = (img_tag.get("data-src") or img_tag.get("src") or "") if img_tag else ""
                         if 0 < price <= MAX_BUDGET_PLN and href:
-                            out.append({"id": f"store_{sname}_{hash(href)}", "source": sname, "title": (a.get("title") or a.get_text(" ", strip=True)).strip(), "desc": "", "price": price, "url": href, "image": img})
+                            out.append({"id": "store_" + sname + "_" + str(hash(href)), "source": sname, "title": (a.get("title") or a.get_text(" ", strip=True)).strip(), "desc": "", "price": price, "url": href, "image": img})
                 except Exception:
                     pass
     return out
 
 
-async def send_telegram_text(msg: str):
+async def send_telegram_text(text: str):
     token = os.getenv("TELEGRAM_BOT_TOKEN", "")
     chat_id = os.getenv("TELEGRAM_CHAT_ID", "")
     if not token or not chat_id:
         return False
     async with httpx.AsyncClient(timeout=15.0) as client:
-        r = await client.post(f"https://api.telegram.org/bot{token}/sendMessage", json={"chat_id": chat_id, "text": msg, "parse_mode": "HTML"})
+        r = await client.post("https://api.telegram.org/bot" + token + "/sendMessage", json={"chat_id": chat_id, "text": text, "parse_mode": "HTML"})
         return r.status_code == 200
 
 
@@ -342,17 +342,17 @@ async def send_telegram(offer, deal):
         "<b>Set:</b> " + str(deal["set_name"]) + "\n"
         "<b>Produkt:</b> " + str(deal["product_type"]) + "\n"
         "<b>Ogloszenie:</b> " + str(offer["title"]) + "\n\n"
-        "<b>Cena oferty:</b> <b>" + f"{deal['price']:.2f} zl</b>\n"
-        "<b>Cena rynkowa PL:</b> ~" + f"{deal['market_price']:.2f} zl\n"
-        "<b>Taniej o:</b> <b>-" + f"{deal['discount']:.2f} zl (-{deal['discount_pct']}%)</b>\n\n"
+        "<b>Cena oferty:</b> <b>" + f"{deal['price']:.2f}" + " zl</b>\n"
+        "<b>Cena rynkowa PL:</b> ~" + f"{deal['market_price']:.2f}" + " zl\n"
+        "<b>Taniej o:</b> <b>-" + f"{deal['discount']:.2f}" + " zl (-" + str(deal["discount_pct"]) + "%)</b>\n\n"
         "<a href=\"" + str(offer["url"]) + "\">OTWORZ OFERTE TERAZ</a>"
     )
     async with httpx.AsyncClient(timeout=15.0) as client:
         if offer.get("image"):
-            r = await client.post(f"https://api.telegram.org/bot{token}/sendPhoto", json={"chat_id": chat_id, "photo": offer["image"], "caption": msg, "parse_mode": "HTML"})
+            r = await client.post("https://api.telegram.org/bot" + token + "/sendPhoto", json={"chat_id": chat_id, "photo": offer["image"], "caption": msg, "parse_mode": "HTML"})
             if r.status_code == 200:
                 return True
-        r = await client.post(f"https://api.telegram.org/bot{token}/sendMessage", json={"chat_id": chat_id, "text": msg, "parse_mode": "HTML"})
+        r = await client.post("https://api.telegram.org/bot" + token + "/sendMessage", json={"chat_id": chat_id, "text": msg, "parse_mode": "HTML"})
         return r.status_code == 200
 
 
@@ -364,18 +364,11 @@ async def main():
     olx_items, vinted_items, store_items = await asyncio.gather(scrape_olx(pages), scrape_vinted(pages), scrape_stores())
     all_offers = olx_items + vinted_items + store_items
 
-    if first_run:
-        await send_telegram_text(
-            "<b>SKANER V2 URUCHOMIONY (DEEP SCAN)</b>\n"
-            f"Pobrano z OLX: {len(olx_items)} ofert\n"
-            f"Pobrano z Vinted: {len(vinted_items)} ofert\n"
-            f"Pobrano ze sklepow: {len(store_items)} ofert"
-        )
-
     sent_count = 0
     for off in all_offers:
         oid = str(off["id"])
-        ohash = "h_" + hashlib.md5(f"{off['source']}|{off['title'].lower()}|{off['price']}".encode()).hexdigest()
+        raw_sig = str(off["source"]) + "|" + str(off["title"]).lower() + "|" + str(off["price"])
+        ohash = "h_" + hashlib.md5(raw_sig.encode()).hexdigest()
         if oid in seen or ohash in seen:
             continue
         seen.add(oid)
@@ -389,7 +382,16 @@ async def main():
 
     with open(SEEN_FILE, "w", encoding="utf-8") as f:
         json.dump(list(seen)[-50000:], f)
-    print(f"Wyslano powiadomien: {sent_count}")
+
+    if first_run:
+        raport = (
+            "<b>RAPORT PIERWSZEGO SKANU (DEEP SCAN)</b>\n\n"
+            "OLX pobrano: <b>" + str(len(olx_items)) + "</b> ofert\n"
+            "Vinted pobrano: <b>" + str(len(vinted_items)) + "</b> ofert\n"
+            "Sklepy PL pobrano: <b>" + str(len(store_items)) + "</b> ofert\n"
+            "Wyslano okazji: <b>" + str(sent_count) + "</b>"
+        )
+        await send_telegram_text(raport)
 
 
 if __name__ == "__main__":
