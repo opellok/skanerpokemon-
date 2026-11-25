@@ -17,7 +17,7 @@ SEEN_FILE = "seen_offers.json"
 TARGET_SETS = {
     "ascended_heroes": {"name": "Ascended Heroes", "keywords": ["ascended heroes", "ascended hero"]},
     "30th_celebration_classic": {
-        "name": "30th Celebration — Classic Collection Booster",
+        "name": "30th Celebration - Classic Collection Booster",
         "keywords": ["30th celebration", "30th anniversary", "celebrations 30"],
         "required_all": ["classic"],
         "allowed_types": ["booster_pack", "sleeved_booster", "checklane_blister"],
@@ -26,7 +26,7 @@ TARGET_SETS = {
     "mega_evolution_base": {"name": "Mega Evolution (Base Set)", "keywords": ["mega evolution", "mega evolutions"]},
     "black_bolt": {"name": "Black Bolt", "keywords": ["black bolt", "blackbolt"]},
     "white_flare": {"name": "White Flare", "keywords": ["white flare", "whiteflare"]},
-    "sv_151": {"name": "Scarlet & Violet — 151", "keywords": ["pokemon 151", "scarlet & violet 151", "scarlet violet 151", "sv 151", "sv151", "mew 151", " 151 "]},
+    "sv_151": {"name": "Scarlet & Violet - 151", "keywords": ["pokemon 151", "scarlet & violet 151", "scarlet violet 151", "sv 151", "sv151", "mew 151", " 151 "]},
     "crown_zenith": {"name": "Crown Zenith", "keywords": ["crown zenith"]},
     "evolving_skies": {"name": "Evolving Skies", "keywords": ["evolving skies"]},
     "chilling_reign": {"name": "Chilling Reign", "keywords": ["chilling reign"]},
@@ -60,39 +60,39 @@ TARGET_SETS = {
 }
 
 NON_ENGLISH_BLACKLIST = [
-    "jpn", "jap", "japanese", "japoński", "japońskie", "japonski", "japonskie",
+    "jpn", "jap", "japanese", "japonski", "japonskie",
     "deu", "ger", "german", "niemiecki", "niemieckie", "deutsch",
-    "fra", "fre", "french", "francuski", "francuskie", "français",
-    "esp", "spa", "spanish", "hiszpański", "hiszpańskie", "hiszpanski",
-    "ita", "italian", "włoski", "włoskie", "wloski",
-    "kor", "korean", "koreański", "koreańskie", "koreanski",
-    "chn", "chi", "chinese", "chiński", "chińskie", "chinski",
-    "po polsku", "język polski", "jezyk polski", "sv2a", "s8b", "s12a", "sv8a", "sv4a",
+    "fra", "fre", "french", "francuski", "francuskie", "francais",
+    "esp", "spa", "spanish", "hiszpanski", "hiszpanskie", "espanol",
+    "ita", "italian", "wloski", "wloskie",
+    "kor", "korean", "koreanski", "koreanskie",
+    "chn", "chi", "chinese", "chinski", "chinskie",
+    "po polsku", "jezyk polski", "sv2a", "s8b", "s12a", "sv8a", "sv4a",
 ]
 
 FAKE_JUNK_BLACKLIST = [
-    "proxy", "zamiennik", "replika", "replica", "custom", "fake", "podróbka", "podrobka",
-    "fan art", "fanart", "oro", "złote karty", "zlote karty", "srebrne karty", "czarne karty",
+    "proxy", "zamiennik", "replika", "replica", "custom", "fake", "podrobka",
+    "fan art", "fanart", "oro", "zlote karty", "srebrne karty", "czarne karty",
     "55 sztuk", "55 szt", "100 sztuk", "100 szt", "360 kart", "324 karty",
-    "pusty", "pusta", "puste", "bez kart", "bez boosterów", "bez boosterow", "same pudełko", "samo pudełko",
+    "pusty", "pusta", "puste", "bez kart", "bez boosterow", "same pudelko", "samo pudelko",
     "otwarty", "otwarta", "otwarte", "rozpakowany", "rozpakowane", "unsealed", "opened",
     "kod", "kody", "code card", "tcg live", "online", "koszulki", "sleeves", "mata", "playmat",
     "album", "segregator", "binder", "karta ", "karty ", "single", "singiel", "psa ", "cgc ", "bgs ", "graded",
 ]
 
 SEALED_PRODUCT_TYPES = [
-    ("booster_box", ["booster box", "boosterbox", "display", "36 boosterów", "36 boosterow", "36 paczek", "36 saszetek"]),
+    ("booster_box", ["booster box", "boosterbox", "display", "36 boosterow", "36 paczek", "36 saszetek"]),
     ("pc_etb", ["pokemon center elite trainer", "pokemon center etb", "pc etb"]),
-    ("etb", ["elite trainer box", "elite trainer", "etb", "zestaw trenera", "pudełko trenera", "pudelko trenera"]),
-    ("booster_bundle", ["booster bundle", "boosterbundle", "bundle", "6 boosterów", "6 boosterow", "6 paczek", "6 saszetek"]),
+    ("etb", ["elite trainer box", "elite trainer", "etb", "zestaw trenera", "pudelko trenera"]),
+    ("booster_bundle", ["booster bundle", "boosterbundle", "bundle", "6 boosterow", "6 paczek", "6 saszetek"]),
     ("upc", ["ultra premium collection", "upc", "super premium collection", "spc", "premium collection"]),
-    ("poster_collection", ["poster collection", "poster box", "zestaw z plakatem", "pudełko z plakatem"]),
+    ("poster_collection", ["poster collection", "poster box", "zestaw z plakatem", "pudelko z plakatem"]),
     ("binder_collection", ["binder collection", "binder box", "zestaw z albumem"]),
-    ("3pack_blister", ["3-pack blister", "3 pack blister", "3pack blister", "triple blister", "3 boostery", "3 paczki", "trójpak"]),
+    ("3pack_blister", ["3-pack blister", "3 pack blister", "3pack blister", "triple blister", "3 boostery", "3 paczki", "trojpak"]),
     ("checklane_blister", ["checklane blister", "1-pack blister", "1 pack blister", "blister"]),
     ("sleeved_booster", ["sleeved booster", "sleeved pack", "booster w kartoniku", "w kartoniku"]),
-    ("mini_tin", ["mini tin", "minitin", "mała puszka", "mala puszka"]),
-    ("tin", ["tin", "puszka", "metalowe pudełko", "metalowe pudelko"]),
+    ("mini_tin", ["mini tin", "minitin", "mala puszka"]),
+    ("tin", ["tin", "puszka", "metalowe pudelko"]),
     ("collection_box", ["collection box", "ex box", "v box", "vmax box", "vstar box", "tech sticker", "zestaw kolekcjonerski"]),
     ("booster_pack", ["booster pack", "booster", "saszetka", "saszetki", "paczka", "paczki", "paczuszka", "10 kart"]),
 ]
@@ -160,8 +160,15 @@ SEARCH_QUERIES = [
 ]
 
 
+def strip_pl(text: str) -> str:
+    tr = str.maketrans("ąćęłńóśźżĄĆĘŁŃÓŚŹŻ", "acelnoszzACELNOSZZ")
+    return (text or "").translate(tr)
+
+
 def norm(text: str) -> str:
-    return f" {re.sub(r'\s+', ' ', (text or '').lower()).strip()} "
+    cleaned = strip_pl(text).lower()
+    cleaned = re.sub(r"\s+", " ", cleaned).strip()
+    return f" {cleaned} "
 
 
 def evaluate_offer(title: str, desc: str, price: float):
@@ -232,7 +239,7 @@ async def scrape_olx(pages: int = 1):
                     for item in r.json().get("data", []):
                         price = next((float(pr["value"]["value"]) for pr in item.get("params", []) if pr.get("key") == "price"), 0.0)
                         photos = item.get("photos", [])
-                        img = photos.get("link", "").replace("{width}", "600").replace("{height}", "600") if photos else ""
+                        img = photos[0].get("link", "").replace("{width}", "600").replace("{height}", "600") if photos else ""
                         if price > 0:
                             out.append({"id": f"olx_{item['id']}", "source": "OLX", "title": item.get("title", ""), "desc": item.get("description", ""), "price": price, "url": item.get("url", ""), "image": img})
                     await asyncio.sleep(random.uniform(0.8, 1.5))
@@ -289,7 +296,7 @@ async def scrape_stores():
                     soup = BeautifulSoup(r.text, "lxml")
                     for card in soup.select("li.product, div.product-inner-wrap, div.product, article.product-miniature, div.product-tile")[:15]:
                         txt = card.get_text(" ", strip=True).lower()
-                        if any(w in txt for w in ["brak w magazynie", "wyprzedane", "niedostępny", "brak towaru", "out of stock"]):
+                        if any(w in txt for w in ["brak w magazynie", "wyprzedane", "niedostepny", "brak towaru", "out of stock"]):
                             continue
                         a = card.select_one("a.woocommerce-LoopProduct-link, a.prodname, h2 a, h3 a, a.product-name, a")
                         ptag = card.select_one("ins .woocommerce-Price-amount, .woocommerce-Price-amount, .price em, .price, .product-price")
@@ -317,26 +324,20 @@ async def send_telegram(offer, deal):
     chat_id = os.getenv("TELEGRAM_CHAT_ID", "")
     if not token or not chat_id:
         return False
-    msg = (
-        f"🔥 <b>OKAZJA POKÉMON TCG ({offer['source']})</b>
-
-"
-        f"📦 <b>Set:</b> {deal['set_name']}
-"
-        f"🏷️ <b>Produkt:</b> {deal['product_type']}
-"
-        f"📝 <b>Ogłoszenie:</b> {offer['title']}
-
-"
-        f"💰 <b>Cena oferty:</b> <b>{deal['price']:.2f} zł</b>
-"
-        f"📊 <b>Cena rynkowa PL:</b> ~{deal['market_price']:.2f} zł
-"
-        f"📉 <b>Taniej o:</b> <b>-{deal['discount']:.2f} zł (-{deal['discount_pct']}%)</b>
-
-"
-        f"👉 <a href="{offer['url']}">OTWÓRZ OFERTĘ TERAZ</a>"
-    )
+    lines = [
+        f"<b>OKAZJA POKEMON TCG ({offer['source']})</b>",
+        "",
+        f"<b>Set:</b> {deal['set_name']}",
+        f"<b>Produkt:</b> {deal['product_type']}",
+        f"<b>Ogloszenie:</b> {offer['title']}",
+        "",
+        f"<b>Cena oferty:</b> <b>{deal['price']:.2f} zl</b>",
+        f"<b>Cena rynkowa PL:</b> ~{deal['market_price']:.2f} zl",
+        f"<b>Taniej o:</b> <b>-{deal['discount']:.2f} zl (-{deal['discount_pct']}%)</b>",
+        "",
+        f"<a href=\"{offer['url']}\">OTWORZ OFERTE TERAZ</a>",
+    ]
+    msg = "\n".join(lines)
     async with httpx.AsyncClient(timeout=15.0) as client:
         if offer.get("image"):
             r = await client.post(f"https://api.telegram.org/bot{token}/sendPhoto", json={"chat_id": chat_id, "photo": offer["image"], "caption": msg, "parse_mode": "HTML"})
@@ -373,7 +374,7 @@ async def main():
 
     with open(SEEN_FILE, "w", encoding="utf-8") as f:
         json.dump(list(seen)[-50000:], f)
-    print(f"Wysłano powiadomień: {sent_count}")
+    print(f"Wyslano powiadomien: {sent_count}")
 
 
 if __name__ == "__main__":
